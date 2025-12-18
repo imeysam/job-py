@@ -13,7 +13,7 @@ class OTPRepository:
     def __init__(self, session: AsyncSession):
         self.session = session
 
-    async def create(self, user: User, data: OTPCreate) -> OTPRead:
+    async def create(self, user: User, data: OTPCreate) -> OTP:
         record = OTP(
             user_id=user.id,
             field_name=data.field,
